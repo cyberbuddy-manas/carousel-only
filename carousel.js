@@ -51,7 +51,6 @@ class Carousel {
   setControls() {
     this.carouselControls.forEach(control => {
       galleryControlsContainer.appendChild(document.createElement('button')).className = `gallery-controls-${control}`;
-
       document.querySelector(`.gallery-controls-${control}`).innerText = control;
     });
   }
@@ -63,28 +62,32 @@ class Carousel {
     triggers.forEach(control => {
       control.addEventListener('click', e => {
         e.preventDefault();
+        this.setCurrentState(control);
 
-        if (control.className == 'gallery-controls-add') {
+/*        if (control.className == 'gallery-controls-add') {
           const newItem = document.createElement('img');
           const latestItem = this.carouselArray.length;
           const latestIndex = this.carouselArray.findIndex(item => item.getAttribute('data-index') == this.carouselArray.length)+1;
-
+*/
           // Assign the necessary properties for new gallery item
-          Object.assign(newItem,{
+
+/*          Object.assign(newItem,{
             className: 'gallery-item',
             src: `http://fakeimg.pl/300/?text=${this.carouselArray.length+1}`
           });
           newItem.setAttribute('data-index', this.carouselArray.length+1);
-
+*/
           // Then add it to the carouselArray and update the gallery
-          this.carouselArray.splice(latestIndex, 0, newItem);
+
+/*          this.carouselArray.splice(latestIndex, 0, newItem);
           document.querySelector(`[data-index="${latestItem}"]`).after(newItem);
           this.updateGallery();
+          } 
 
-        } else {
-          this.setCurrentState(control);
+        else {
+          
         }
-
+*/
       });
     });
   }
@@ -95,3 +98,20 @@ const exampleCarousel = new Carousel(galleryContainer, galleryItems, galleryCont
 exampleCarousel.setControls();
 // exampleCarousel.setNav();
 exampleCarousel.useControls();
+
+//auto slider
+
+/*var slideIndex = 0;
+showSlides(); 
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("gallery-item");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}*/
