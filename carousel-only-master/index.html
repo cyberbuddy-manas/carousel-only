@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Carousel</title>
+  <link rel="stylesheet" href="carousel.css">
+</head>
+<body >
+  <div  style="padding-top: 120px;" class="gallery">
+    <div class="gallery-container">
+      <img class="gallery-item gallery-item-1" src="anhat.png" data-index="1">
+      <img class="gallery-item gallery-item-2" src="tanvir.png" data-index="2">
+      <img class="gallery-item gallery-item-3" src="anhat.png" data-index="3">
+      <img class="gallery-item gallery-item-4" src="tanvir.png" data-index="4">
+      <img class="gallery-item gallery-item-5" src="anhat.png" data-index="5">
+    </div>
+    <div class="gallery-controls"></div>
+  </div>
+
+  <script src="carousel.js"></script>
+  <script>
+    function clicktrigger()
+  {
+    document.querySelector('.gallery-controls-next').click();
+    console.log("hi");
+  }
+  clicktrigger();
+  setInterval(clicktrigger,3000);
+  </script>
+</body>
+</html>
