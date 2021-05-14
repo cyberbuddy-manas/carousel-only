@@ -18,15 +18,16 @@
     </div>
     <div class="gallery-controls"></div>
   </div>
- <!--  <script type="text/javascript">
-    function clicko()
-    {
-      document.getElementsByClassName('gallery-controls-next').click();
-      console.log("hi");
-    }
 
-    setInterval(clicko(), 2000);
-  </script> -->
   <script src="carousel.js"></script>
+  <script>
+    function clicktrigger()
+  {
+    document.querySelector('.gallery-controls-next').click();
+    console.log("hi");
+  }
+  clicktrigger();
+  setInterval(clicktrigger,3000);
+  </script>
 </body>
 </html>
